@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace logica
 {
-    class RolEstudiante
+    public class RolEstudiante
     {
+
+        private int calificacion;
+
+        public int Calificacion
+        {
+            get
+            {
+                return calificacion;
+            }
+
+            set
+            {
+                calificacion = value;
+            }
+        }
     }
 }

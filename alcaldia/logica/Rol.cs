@@ -9,16 +9,43 @@ namespace logica
 {
     public class Rol
     {
-        
+        private int idRol;
+        private string nombre;
+
+        public int IdRol
+        {
+            get
+            {
+                return idRol;
+            }
+
+            set
+            {
+                idRol = value;
+            }
+        }
+
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
+            }
+        }
 
         public void registrarCliente()
         {
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into cliente (nombre,apellido,direccion,telefono) values('" + nombre + "','" + apellido + "','" + direccion + "','" + telefono + "')";
+            string sentencia = "insert into cliente (nombre) values('" + Nombre +"')";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into  cliente (nombre,apellido,direccion,telefono) values('" + nombre + "','" + apellido + "','" + direccion + "','" + telefono + "')"))
+            if (objConexion.ejecutar("insert into  cliente (nombre) values('" + Nombre + "'')"))
             {
                 MessageBox.Show("Cliente registrado correctamente");
             }

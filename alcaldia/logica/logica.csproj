@@ -51,7 +51,7 @@
     <Compile Include="RolEstudiante.cs" />
     <Compile Include="RolSecretaria.cs" />
     <Compile Include="Secretaria.cs" />
-    <Compile Include="Usurio.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\persistencia\persistencia.csproj">

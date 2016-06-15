@@ -6,7 +6,50 @@ using System.Threading.Tasks;
 
 namespace logica
 {
-    class Alcaldia
+    public class Alcaldia
     {
+
+        private string nombre;
+        private string direccion;
+        private string telefono;
+
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
+            }
+        }
+
+        public string Direccion
+        {
+            get
+            {
+                return direccion;
+            }
+
+            set
+            {
+                direccion = value;
+            }
+        }
+
+        public string Telefono
+        {
+            get
+            {
+                return telefono;
+            }
+
+            set
+            {
+                telefono = value;
+            }
+        }
     }
 }

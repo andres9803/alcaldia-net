@@ -6,7 +6,36 @@ using System.Threading.Tasks;
 
 namespace logica
 {
-    class RolSecretaria
+    public class RolSecretaria
     {
+
+        private string codigo;
+        private long idUsecretaria;
+
+        public string Codigo
+        {
+            get
+            {
+                return codigo;
+            }
+
+            set
+            {
+                codigo = value;
+            }
+        }
+
+        public long IdUsecretaria
+        {
+            get
+            {
+                return idUsecretaria;
+            }
+
+            set
+            {
+                idUsecretaria = value;
+            }
+        }
     }
 }
