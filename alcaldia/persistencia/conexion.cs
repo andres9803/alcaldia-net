@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace persistencia
 {
-    class Conexion
+    public class Conexion
     {
         SqlConnection conexion;//Cadena Conexion
         SqlCommand comando;// ejecutar insert, delete o update 
