@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alcaldia", "alcaldia\alcaldia.csproj", "{F53CDFB8-11E2-40A3-94A9-A1B870AFF828}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logica", "logica\logica.csproj", "{278D7390-9D73-4F01-B068-C6659A6A48DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "persistencia", "persistencia\persistencia.csproj", "{F067E4B6-74A6-4CEF-968B-18DA052FA161}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F53CDFB8-11E2-40A3-94A9-A1B870AFF828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F53CDFB8-11E2-40A3-94A9-A1B870AFF828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F53CDFB8-11E2-40A3-94A9-A1B870AFF828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{278D7390-9D73-4F01-B068-C6659A6A48DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{278D7390-9D73-4F01-B068-C6659A6A48DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{278D7390-9D73-4F01-B068-C6659A6A48DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{278D7390-9D73-4F01-B068-C6659A6A48DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F067E4B6-74A6-4CEF-968B-18DA052FA161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F067E4B6-74A6-4CEF-968B-18DA052FA161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F067E4B6-74A6-4CEF-968B-18DA052FA161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F067E4B6-74A6-4CEF-968B-18DA052FA161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
