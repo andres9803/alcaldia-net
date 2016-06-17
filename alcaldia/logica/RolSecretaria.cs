@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using persistencia;
+using System.Windows.Forms;
+using System.Data;
 
 namespace logica
 {
@@ -10,32 +13,56 @@ namespace logica
     {
 
         private string codigo;
-        private long idUsecretaria;
+        private long idsecretaria;
 
         public string Codigo
         {
-            get
-            {
-                return codigo;
-            }
-
-            set
-            {
-                codigo = value;
-            }
+            get { return codigo; }
+            set { codigo = value; }
         }
 
-        public long IdUsecretaria
+        public long Idsecretaria
         {
-            get
+            get { return idsecretaria; }
+            set { idsecretaria = value; }
+        }
+
+        public DataSet llenarSecretarias()
+        {
+            try
             {
-                return idUsecretaria;
+                Conexion objConexion = new Conexion();
+                string consulta = "select * from secretaria";
+                DataSet data = new DataSet();
+                data = objConexion.consultar(consulta);
+
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
-            set
+        }
+
+        public void registrarRolSecretaria()
+        {
+
+            Conexion objConexion = new Conexion();
+            string sentencia = "insert into rolSecretaria (codigo,idSecretaria) values('" + codigo + "','" + idsecretaria + "')";
+
+            MessageBox.Show(sentencia);
+
+            if (objConexion.ejecutar("insert into rolSecretaria (codigo,idSecretaria) values('" + codigo + "','" + idsecretaria + "')"))
             {
-                idUsecretaria = value;
+                MessageBox.Show("Usuario de secretaria registrado correctamente");
             }
+            else
+            {
+                MessageBox.Show("Usuario de secretaria no registrado");
+            }
+
         }
     }
 }

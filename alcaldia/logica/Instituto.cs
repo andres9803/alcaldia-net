@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using persistencia;
+using System.Windows.Forms;
+using System.Data;
 
 namespace logica
 {
@@ -16,54 +19,64 @@ namespace logica
 
         public string Nombre
         {
-            get
-            {
-                return nombre;
-            }
-
-            set
-            {
-                nombre = value;
-            }
+            get { return nombre; }
+            set { nombre = value; }
         }
 
         public string Direccion
         {
-            get
-            {
-                return direccion;
-            }
-
-            set
-            {
-                direccion = value;
-            }
+            get { return direccion; }
+            set { direccion = value; }
         }
 
         public string Telefono
         {
-            get
-            {
-                return telefono;
-            }
-
-            set
-            {
-                telefono = value;
-            }
+            get { return telefono; }
+            set { telefono = value; }
         }
 
         public long IdAlcaldia
         {
-            get
+            get { return idAlcaldia; }
+            set { idAlcaldia = value; }
+        }
+
+        public DataSet llenarAlcaldias()
+        {
+            try
             {
-                return idAlcaldia;
+                Conexion objConexion = new Conexion();
+                string consulta = "select * from alcaldia";
+                DataSet data = new DataSet();
+                data = objConexion.consultar(consulta);
+
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
-            set
+        }
+
+        public void registrarCurso()
+        {
+
+            Conexion objConexion = new Conexion();
+            string sentencia = "insert into instituto (nombre,direccion,telefono,idAlcaldia) values('" + nombre + "','" + direccion + "'," + telefono + "," + idAlcaldia + ")";
+
+            MessageBox.Show(sentencia);
+
+            if (objConexion.ejecutar("insert into instituto (nombre,direccion,telefono,idAlcaldia) values('" + nombre + "','" + direccion + "'," + telefono + "," + idAlcaldia + "')"))
             {
-                idAlcaldia = value;
+                MessageBox.Show("Instituto registrado correctamente");
             }
+            else
+            {
+                MessageBox.Show("Instituto no registrado");
+            }
+
         }
     }
 }

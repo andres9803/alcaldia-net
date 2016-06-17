@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using persistencia;
 using System.Windows.Forms;
+using System.Data;
 
 namespace logica
 {
@@ -25,145 +26,106 @@ namespace logica
 
         public string Nombres
         {
-            get
-            {
-                return nombres;
-            }
-
-            set
-            {
-                nombres = value;
-            }
+            get { return nombres; }
+            set { nombres = value; }
         }
 
         public string Apellidos
         {
-            get
-            {
-                return apellidos;
-            }
-
-            set
-            {
-                apellidos = value;
-            }
+            get { return apellidos; }
+            set { apellidos = value; }
         }
 
         public long Documento
         {
-            get
-            {
-                return documento;
-            }
-
-            set
-            {
-                documento = value;
-            }
+            get { return documento; }
+            set { documento = value; }
         }
 
         public string Tipodocumento
         {
-            get
-            {
-                return tipodocumento;
-            }
-
-            set
-            {
-                tipodocumento = value;
-            }
+            get { return tipodocumento; }
+            set { tipodocumento = value; }
         }
 
         public long Telefono
         {
-            get
-            {
-                return telefono;
-            }
-
-            set
-            {
-                telefono = value;
-            }
+            get { return telefono; }
+            set { telefono = value; }
         }
 
         public long Celular
         {
-            get
-            {
-                return celular;
-            }
-
-            set
-            {
-                celular = value;
-            }
+            get { return celular; }
+            set { celular = value; }
         }
 
         public string Direccion
         {
-            get
-            {
-                return direccion;
-            }
-
-            set
-            {
-                direccion = value;
-            }
+            get { return direccion; }
+            set { direccion = value; }
         }
 
         public string Barrio
         {
-            get
-            {
-                return barrio;
-            }
-
-            set
-            {
-                barrio = value;
-            }
+            get { return barrio; }
+            set { barrio = value; }
         }
 
         public string Correo
         {
-            get
-            {
-                return correo;
-            }
-
-            set
-            {
-                correo = value;
-            }
+            get { return correo; }
+            set { correo = value; }
         }
 
         public string Clave
         {
-            get
-            {
-                return clave;
-            }
-
-            set
-            {
-                clave = value;
-            }
+            get { return clave; }
+            set { clave = value; }
         }
 
         public long IdRol
         {
-            get
+            get { return idRol; }
+            set { idRol = value; }
+        }
+
+        public DataSet llenarRoles()
+        {
+            try
             {
-                return idRol;
+                Conexion objConexion = new Conexion();
+                string consulta = "select * from rol";
+                DataSet data = new DataSet();
+                data = objConexion.consultar(consulta);
+
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
-            set
+        }
+
+        public void registrarUsuario()
+        {
+
+            Conexion objConexion = new Conexion();
+            string sentencia = "insert into usuario (nombres,apellidos,documento,tipoDocumento,telefono,celular,direcion,barrio,correo,clave,idRol) values('" + nombres + "','" + apellidos + "," + documento + ",'" + tipodocumento + "'," + telefono + "," + celular + ",'" + direccion + "','" + barrio + "','" + correo + "','" + clave + "'," + idRol + "')";
+
+            MessageBox.Show(sentencia);
+
+            if (objConexion.ejecutar("insert into usuario(nombres, apellidos, documento, tipoDocumento, telefono, celular, direcion, barrio, correo, clave, idRol) values('" + nombres + "', '" + apellidos + "," + documento + ",'" + tipodocumento + "'," + telefono + "," + celular + ",'" + direccion + "','" + barrio + "','" + correo + "','" + clave + "'," + idRol + "')"))
             {
-                idRol = value;
+                MessageBox.Show("Usuario registrado correctamente");
             }
+            else
+            {
+                MessageBox.Show("Usuario no registrado");
+            }
+
         }
     }
 }

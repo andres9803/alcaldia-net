@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using persistencia;
+using System.Windows.Forms;
+using System.Data;
 
 namespace logica
 {
@@ -14,28 +17,51 @@ namespace logica
 
         public DateTime Fecha
         {
-            get
-            {
-                return fecha;
-            }
-
-            set
-            {
-                fecha = value;
-            }
+            get { return fecha; }
+            set { fecha = value; }
         }
 
         public long IdRolEstudiante
         {
-            get
+            get { return idRolEstudiante; }
+            set { idRolEstudiante = value; }
+        }
+
+        public DataSet llenarRolEstudiantes()
+        {
+            try
             {
-                return idRolEstudiante;
+                Conexion objConexion = new Conexion();
+                string consulta = "select * from rolEstudiante";
+                DataSet data = new DataSet();
+                data = objConexion.consultar(consulta);
+
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
-            set
+        }
+
+        public void registrarRolEstudiante()
+        {
+            Conexion objConexion = new Conexion();
+            string sentencia = "insert into rol (fecha,idRolEstudiante) values('" + fecha + "',"+idRolEstudiante+")";
+
+            MessageBox.Show(sentencia);
+
+            if (objConexion.ejecutar("insert into  nombre (fecha,idRolEstudiante) values('" + fecha + "'," + idRolEstudiante + ")"))
             {
-                idRolEstudiante = value;
+                MessageBox.Show("Asistencia registrada correctamente");
             }
+            else
+            {
+                MessageBox.Show("Asistencia no Registrada");
+            }
+
         }
     }
 }

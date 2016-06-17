@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using persistencia;
 using System.Windows.Forms;
+using System.Data;
+
 namespace logica
 {
     public class Rol
@@ -14,44 +16,30 @@ namespace logica
 
         public int IdRol
         {
-            get
-            {
-                return idRol;
-            }
-
-            set
-            {
-                idRol = value;
-            }
+            get { return idRol; }
+            set { idRol = value; }
         }
 
         public string Nombre
         {
-            get
-            {
-                return nombre;
-            }
-
-            set
-            {
-                nombre = value;
-            }
+            get { return nombre; }
+            set { nombre = value; }
         }
 
-        public void registrarCliente()
+        public void registrarRol()
         {
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into cliente (nombre) values('" + Nombre +"')";
+            string sentencia = "insert into rol (nombre) values('" + Nombre + "')";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into  cliente (nombre) values('" + Nombre + "'')"))
+            if (objConexion.ejecutar("insert into  nombre (nombre) values('" + Nombre + "'')"))
             {
-                MessageBox.Show("Cliente registrado correctamente");
+                MessageBox.Show("Rol registrado correctamente");
             }
             else
             {
-                MessageBox.Show("Cliente no Registrado");
+                MessageBox.Show("Rol no Registrado");
             }
 
         }
