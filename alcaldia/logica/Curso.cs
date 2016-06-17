@@ -22,6 +22,7 @@ namespace logica
         private DateTime fechaInicialInscripciones;
         private DateTime fechaFinalInscripciones;
         private long idInstituto;
+        private int valoracioncurso;
 
         public string Descripcion
         {
@@ -83,6 +84,12 @@ namespace logica
             set { idInstituto = value; }
         }
 
+        public int Valoracioncurso
+        {
+            get { return valoracioncurso; }
+            set { valoracioncurso = value; }
+        }
+
         public DataSet llenarInstitutos()
         {
             try
@@ -101,7 +108,7 @@ namespace logica
             }
 
         }
-        
+
         public void registrarCurso()
         {
 
@@ -120,6 +127,6 @@ namespace logica
             }
 
         }
-               
+
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using logica;
 
 namespace alcaldia
 {
@@ -19,7 +20,31 @@ namespace alcaldia
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnIngreso_Click(object sender, EventArgs e)
+        {
+            Usuario objUsuario = new Usuario();
+            objUsuario.Documento = int.Parse(txtDocumento.Text);
+            objUsuario.Clave = txtClave.Text;
+            DataSet ds = new DataSet();
+            ds = objUsuario.iniciarSesion();
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+
+                Sesion.documentoSesion = int.Parse(ds.Tables[0].Rows[0][0].ToString());
+                Sesion.nombreSesion = ds.Tables[0].Rows[0][1].ToString();
+                Sesion.rolSesion = ds.Tables[0].Rows[0][2].ToString();
+                Menu menu = new Menu();
+                menu.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Datos Incorrectos");
+            }
         }
     }
+}
 }

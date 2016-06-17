@@ -127,5 +127,13 @@ namespace logica
             }
 
         }
+
+        public DataSet iniciarSesion()
+        {
+            Conexion objConexion = new Conexion();
+            DataSet ds = new DataSet();
+            ds = objConexion.consultar("SELECT usuario.documento , usuario.nombre , rol.nombre FROM usuario,rol WHERE usuario.documento =" + documento + " AND usuario.clave = '" + clave + "'");
+            return ds;
+        }
     }
 }
