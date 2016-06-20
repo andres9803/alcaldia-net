@@ -46,14 +46,14 @@ namespace logica
 
         }
 
-        public void registrarRolEstudiante()
+        public void registrarAsistencia()
         {
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into rol (fecha,idRolEstudiante) values('" + fecha + "',"+idRolEstudiante+")";
+            string sentencia = "insert into asistencia (fecha,idRolEstudiante) values('" + fecha + "',"+idRolEstudiante+")";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into  nombre (fecha,idRolEstudiante) values('" + fecha + "'," + idRolEstudiante + ")"))
+            if (objConexion.ejecutar("insert into  asistencia (fecha,idRolEstudiante) values('" + fecha + "'," + idRolEstudiante + ")"))
             {
                 MessageBox.Show("Asistencia registrada correctamente");
             }

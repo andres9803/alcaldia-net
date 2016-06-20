@@ -15,7 +15,7 @@ namespace logica
         private string nombres;
         private string apellidos;
         private long documento;
-        private string tipodocumento;
+        private string tipoDocumento;
         private long telefono;
         private long celular;
         private string direccion;
@@ -42,11 +42,7 @@ namespace logica
             set { documento = value; }
         }
 
-        public string Tipodocumento
-        {
-            get { return tipodocumento; }
-            set { tipodocumento = value; }
-        }
+     
 
         public long Telefono
         {
@@ -90,6 +86,19 @@ namespace logica
             set { idRol = value; }
         }
 
+        public string TipoDocumento
+        {
+            get
+            {
+                return tipoDocumento;
+            }
+
+            set
+            {
+                tipoDocumento = value;
+            }
+        }
+
         public DataSet llenarRoles()
         {
             try
@@ -113,11 +122,11 @@ namespace logica
         {
 
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into usuario (nombres,apellidos,documento,tipoDocumento,telefono,celular,direcion,barrio,correo,clave,idRol) values('" + nombres + "','" + apellidos + "," + documento + ",'" + tipodocumento + "'," + telefono + "," + celular + ",'" + direccion + "','" + barrio + "','" + correo + "','" + clave + "'," + idRol + "')";
+            string sentencia = "insert into usuario(nombres,apellidos,documento,tipoDocumento,telefono,celular,direccion,barrio,correo,clave,idRol) values('" + nombres + "','" + apellidos + "'," + documento + ",'" + tipoDocumento + "'," + telefono + "," + celular + ",'" + direccion + "','" + barrio + "','" + correo + "','" + clave + "'," + idRol + ")";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into usuario(nombres, apellidos, documento, tipoDocumento, telefono, celular, direcion, barrio, correo, clave, idRol) values('" + nombres + "', '" + apellidos + "," + documento + ",'" + tipodocumento + "'," + telefono + "," + celular + ",'" + direccion + "','" + barrio + "','" + correo + "','" + clave + "'," + idRol + "')"))
+            if (objConexion.ejecutar("insert into usuario(nombres,apellidos,documento,tipoDocumento,telefono,celular,direccion,barrio,correo,clave,idRol) values('" + nombres + "', '" + apellidos + "'," + documento + ",'" + tipoDocumento + "'," + telefono + "," + celular + ",'" + direccion + "','" + barrio + "','" + correo + "','" + clave + "'," + idRol + ")"))
             {
                 MessageBox.Show("Usuario registrado correctamente");
             }
@@ -128,12 +137,34 @@ namespace logica
 
         }
 
+        
+
         public DataSet iniciarSesion()
         {
             Conexion objConexion = new Conexion();
             DataSet ds = new DataSet();
-            ds = objConexion.consultar("SELECT usuario.documento , usuario.nombres , rol.nombre FROM usuario,rol WHERE usuario.documento =" + documento + " AND usuario.clave = '" + clave + "'");
+            ds = objConexion.consultar("SELECT usuario.documento , usuario.nombres , rol.nombre FROM usuario INNER JOIN rol ON  rol.idRol = usuario.idRol WHERE usuario.documento =" + documento + " AND usuario.clave = '" + clave + "'");
+          
             return ds;
+        }
+
+        public DataSet traerId()
+        {
+            try
+            {
+                Conexion objConexion = new Conexion();
+                string consulta = "SELECT TOP 1 usuario.idUsuario FROM usuario ORDER BY idUsuario DESC;";
+                DataSet data = new DataSet();
+                data = objConexion.consultar(consulta);
+
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

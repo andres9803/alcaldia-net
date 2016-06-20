@@ -14,7 +14,7 @@ namespace logica
 
         private string nombre;
         private string direccion;
-        private string telefono;
+        private long telefono;
         private long idAlcaldia;
 
         public string Nombre
@@ -29,16 +29,18 @@ namespace logica
             set { direccion = value; }
         }
 
-        public string Telefono
-        {
-            get { return telefono; }
-            set { telefono = value; }
-        }
+
 
         public long IdAlcaldia
         {
             get { return idAlcaldia; }
             set { idAlcaldia = value; }
+        }
+
+        public long Telefono
+        {
+            get { return telefono; }
+            set { telefono = value; }
         }
 
         public DataSet llenarAlcaldias()
@@ -60,15 +62,34 @@ namespace logica
 
         }
 
+        public DataSet llenarSecretarias()
+        {
+            try
+            {
+                Conexion objConexion = new Conexion();
+                string consulta = "select * from secretaria";
+                DataSet data = new DataSet();
+                data = objConexion.consultar(consulta);
+
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
         public void registrarSecretaria()
         {
 
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into secetaria (nombre,direccion,telefono,idAlcaldia) values('" + nombre + "','" + direccion + "'," + telefono + ", " + idAlcaldia + ")";
+            string sentencia = "insert into secetaria (nombre,direccion,telefono,idAlcaldia) values('" + nombre + "','" + direccion + "'," + Telefono + ", " + idAlcaldia + ")";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into secretaria (nombre,direccion,telefono,idAlcaldia) values('" + nombre + "','" + direccion + "'," + telefono + "," + idAlcaldia + "')"))
+            if (objConexion.ejecutar("insert into secretaria (nombre,direccion,telefono,idAlcaldia) values('" + nombre + "','" + direccion + "'," + Telefono + "," + idAlcaldia + ")"))
             {
                 MessageBox.Show("Secretaria registrada correctamente");
             }
@@ -76,7 +97,19 @@ namespace logica
             {
                 MessageBox.Show("Secretaria no registrada");
             }
+        }
 
+        public DataSet consultarSecretarias()
+        {
+            DataSet ds = new DataSet();
+            Conexion objConexion = new Conexion();
+            ds = objConexion.consultar("select * from secretaria");
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("No exinten registros");
+            }
+
+            return ds;
         }
     }
 }

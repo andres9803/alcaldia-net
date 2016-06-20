@@ -44,6 +44,7 @@
             this.btnRegistro.TabIndex = 0;
             this.btnRegistro.Text = "Registrarse";
             this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // btnIngreso
             // 

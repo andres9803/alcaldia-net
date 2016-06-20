@@ -9,7 +9,7 @@ namespace alcaldia
     public class Sesion
     {
 
-        public static int documentoSesion;
+        public static long documentoSesion;
         public static string nombreSesion;
         public static string rolSesion;
     }

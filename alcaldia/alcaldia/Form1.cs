@@ -26,24 +26,42 @@ namespace alcaldia
         private void btnIngreso_Click(object sender, EventArgs e)
         {
             Usuario objUsuario = new Usuario();
-            objUsuario.Documento = int.Parse(txtDocumento.Text);
+            objUsuario.Documento = long.Parse(txtDocumento.Text);
             objUsuario.Clave = txtClave.Text;
             DataSet ds = new DataSet();
             ds = objUsuario.iniciarSesion();
             if (ds.Tables[0].Rows.Count > 0)
             {
 
-                Sesion.documentoSesion = int.Parse(ds.Tables[0].Rows[0][0].ToString());
+                Sesion.documentoSesion = long.Parse(ds.Tables[0].Rows[0][0].ToString());
                 Sesion.nombreSesion = ds.Tables[0].Rows[0][1].ToString();
                 Sesion.rolSesion = ds.Tables[0].Rows[0][2].ToString();
                 Menu menu = new Menu();
-                menu.Show();
+                menu.ShowDialog();
+                Form1 login = new Form1();
+                login.Hide();
 
+                //cerrarVentanaLogin();
             }
             else
             {
                 MessageBox.Show("Datos Incorrectos");
             }
+        }
+
+        public void cerrarVentanaLogin()
+        {
+            //this.Close();
+            Form1 login = new Form1();
+            login.Hide();
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            CrearUsuarioEstudiante crearEstudiante = new CrearUsuarioEstudiante();
+            crearEstudiante.ShowDialog();
+            Form1 login = new Form1();
+            login.Hide();
         }
     }
 }

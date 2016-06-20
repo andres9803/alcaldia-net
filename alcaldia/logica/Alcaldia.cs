@@ -14,7 +14,7 @@ namespace logica
 
         private string nombre;
         private string direccion;
-        private string telefono;
+        private long telefono;
 
         public string Nombre
         {
@@ -28,7 +28,7 @@ namespace logica
             set { direccion = value; }
         }
 
-        public string Telefono
+        public long Telefono
         {
             get { return telefono; }
             set { telefono = value; }
@@ -38,17 +38,36 @@ namespace logica
         {
 
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into alcaldia (nombre,direccion,telefono) values('" + nombre + "','" + direccion + "'," + telefono + ")";
+            string sentencia = "insert into alcaldia (nombre,direccion,telefono) values('" + nombre + "','" + direccion + "'," + Telefono + ")";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into alcaldia (nombre,direccion,telefono) values('" + nombre + "','" + direccion + "'," + telefono + "')"))
+            if (objConexion.ejecutar("insert into alcaldia (nombre,direccion,telefono) values('" + nombre + "','" + direccion + "'," + Telefono + ")"))
             {
                 MessageBox.Show("Alcaldia registrada correctamente");
             }
             else
             {
                 MessageBox.Show("Alcaldia no registrada");
+            }
+
+        }
+
+        public DataSet llenarAlcaldia()
+        {
+            try
+            {
+                Conexion objConexion = new Conexion();
+                string consulta = "select * from alcaldia";
+                DataSet data = new DataSet();
+                data = objConexion.consultar(consulta);
+
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
         }

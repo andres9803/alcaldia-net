@@ -22,7 +22,7 @@ namespace logica
         private DateTime fechaInicialInscripciones;
         private DateTime fechaFinalInscripciones;
         private long idInstituto;
-        private int valoracioncurso;
+        private int valoracionCurso;
 
         public string Descripcion
         {
@@ -84,10 +84,10 @@ namespace logica
             set { idInstituto = value; }
         }
 
-        public int Valoracioncurso
+        public int ValoracionCurso
         {
-            get { return valoracioncurso; }
-            set { valoracioncurso = value; }
+            get { return valoracionCurso; }
+            set { valoracionCurso = value; }
         }
 
         public DataSet llenarInstitutos()
@@ -117,7 +117,7 @@ namespace logica
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into curso (descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto) values('" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + "')"))
+            if (objConexion.ejecutar("insert into curso (descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto) values('" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + ")"))
             {
                 MessageBox.Show("Curso registrado correctamente");
             }

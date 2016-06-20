@@ -14,7 +14,7 @@ namespace logica
 
         private string nombre;
         private string direccion;
-        private string telefono;
+        private long telefono;
         private long idAlcaldia;
 
         public string Nombre
@@ -29,16 +29,25 @@ namespace logica
             set { direccion = value; }
         }
 
-        public string Telefono
-        {
-            get { return telefono; }
-            set { telefono = value; }
-        }
+      
 
         public long IdAlcaldia
         {
             get { return idAlcaldia; }
             set { idAlcaldia = value; }
+        }
+
+        public long Telefono
+        {
+            get
+            {
+                return telefono;
+            }
+
+            set
+            {
+                telefono = value;
+            }
         }
 
         public DataSet llenarAlcaldias()
@@ -60,15 +69,15 @@ namespace logica
 
         }
 
-        public void registrarCurso()
+        public void registrarInstituto()
         {
 
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into instituto (nombre,direccion,telefono,idAlcaldia) values('" + nombre + "','" + direccion + "'," + telefono + "," + idAlcaldia + ")";
+            string sentencia = "insert into instituto (nombre,direccion,telefono,idAlcadia) values('" + nombre + "','" + direccion + "'," + Telefono + "," + idAlcaldia + ")";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into instituto (nombre,direccion,telefono,idAlcaldia) values('" + nombre + "','" + direccion + "'," + telefono + "," + idAlcaldia + "')"))
+            if (objConexion.ejecutar("insert into instituto (nombre,direccion,telefono,idAlcadia) values('" + nombre + "','" + direccion + "'," + Telefono + "," + idAlcaldia + ")"))
             {
                 MessageBox.Show("Instituto registrado correctamente");
             }

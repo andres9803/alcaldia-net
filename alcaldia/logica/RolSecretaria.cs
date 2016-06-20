@@ -11,7 +11,7 @@ namespace logica
 {
     public class RolSecretaria
     {
-
+        private long idRolSecretaria;
         private string codigo;
         private long idsecretaria;
 
@@ -25,6 +25,12 @@ namespace logica
         {
             get { return idsecretaria; }
             set { idsecretaria = value; }
+        }
+
+        public long IdRolSecretaria
+        {
+            get { return idRolSecretaria; }
+            set { idRolSecretaria = value; }
         }
 
         public DataSet llenarSecretarias()
@@ -50,17 +56,17 @@ namespace logica
         {
 
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into rolSecretaria (codigo,idSecretaria) values('" + codigo + "','" + idsecretaria + "')";
+            string sentencia = "insert into rolSecretaria (idRolSecretaria,codigo,idSecretaria) values(" + idRolSecretaria + ",'" + codigo + "'," + idsecretaria + ")";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into rolSecretaria (codigo,idSecretaria) values('" + codigo + "','" + idsecretaria + "')"))
+            if (objConexion.ejecutar("insert into rolSecretaria (idRolSecretaria,codigo,idSecretaria) values(" + idRolSecretaria + ",'" + codigo + "'," + idsecretaria + ")"))
             {
-                MessageBox.Show("Usuario de secretaria registrado correctamente");
+                MessageBox.Show("Usuario de rol secretaria registrado correctamente");
             }
             else
             {
-                MessageBox.Show("Usuario de secretaria no registrado");
+                MessageBox.Show("Usuario de rol secretaria no registrado");
             }
 
         }
