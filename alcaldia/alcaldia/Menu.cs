@@ -187,7 +187,7 @@ namespace alcaldia
 
         private void cursosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void cursosEnLosQueSeEncuentraInscritoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -204,7 +204,9 @@ namespace alcaldia
 
         private void calificarCursosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            CalificarCurso objCalificarCurso = new CalificarCurso();
+            objCalificarCurso.MdiParent = this;
+            objCalificarCurso.Show();
         }
     }
 }

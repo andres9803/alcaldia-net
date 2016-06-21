@@ -52,6 +52,12 @@
     <Compile Include="AsignarCurso.Designer.cs">
       <DependentUpon>AsignarCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="CalificarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalificarCurso.Designer.cs">
+      <DependentUpon>CalificarCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrearAlcaldia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </Compile>
     <EmbeddedResource Include="AsignarCurso.resx">
       <DependentUpon>AsignarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalificarCurso.resx">
+      <DependentUpon>CalificarCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearAlcaldia.resx">
       <DependentUpon>CrearAlcaldia.cs</DependentUpon>

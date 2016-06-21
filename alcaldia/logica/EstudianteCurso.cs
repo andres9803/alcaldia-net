@@ -15,6 +15,7 @@ namespace logica
         private long idRolEstudiante;
         private long idCurso;
         private long documento;
+        private int valoracionCurso;
 
         public long IdRolEstudiante
         {
@@ -32,6 +33,12 @@ namespace logica
         {
             get { return documento; }
             set { documento = value; }
+        }
+
+        public int ValoracionCurso
+        {
+            get { return valoracionCurso; }
+            set { valoracionCurso = value; }
         }
 
         public void registrarEntudianteCurso()
@@ -81,6 +88,26 @@ namespace logica
             }
 
             return ds;
+        }
+
+        public void calificarCurso()
+        {
+
+            Conexion objConexion = new Conexion();
+            string sentencia = "UPDATE  estudiantesCurso  SET  valoracionCurso=" + valoracionCurso + " WHERE idCurso=" + idCurso + "";
+
+
+            MessageBox.Show(sentencia);
+
+            if (objConexion.ejecutar("UPDATE  estudiantesCurso  SET  valoracionCurso = " + valoracionCurso + " WHERE idCurso = " + idCurso + ""))
+            {
+                MessageBox.Show("Curso calificado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo calificar el curso");
+            }
+
         }
     }
 }
