@@ -23,6 +23,7 @@ namespace logica
         private DateTime fechaFinalInscripciones;
         private long idInstituto;
         private int valoracionCurso;
+        private long documento;
 
         public string Descripcion
         {
@@ -96,6 +97,12 @@ namespace logica
             set { nombre = value; }
         }
 
+        public long Documento
+        {
+            get { return documento; }
+            set { documento = value; }
+        }
+
         public DataSet llenarInstitutos()
         {
             try
@@ -137,11 +144,11 @@ namespace logica
         {
 
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into curso (nombre,descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto) values('" + nombre + "','" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + ")";
+            string sentencia = "insert into curso (nombre,descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto,documento) values('" + nombre + "','" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + "," + documento + ")";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into curso (nombre,descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto) values('" + nombre + "','" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + ")"))
+            if (objConexion.ejecutar("insert into curso (nombre,descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto,documento) values('" + nombre + "','" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + "," + documento + ")"))
             {
                 MessageBox.Show("Curso registrado correctamente");
             }
@@ -160,9 +167,10 @@ namespace logica
             {
                 MessageBox.Show("No exinten registros");
             }
-
+            
             return ds;
         }
 
+      
     }
 }

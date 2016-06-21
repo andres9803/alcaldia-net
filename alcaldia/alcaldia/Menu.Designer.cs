@@ -274,6 +274,7 @@
             this.cursosCreadosToolStripMenuItem1.Name = "cursosCreadosToolStripMenuItem1";
             this.cursosCreadosToolStripMenuItem1.Size = new System.Drawing.Size(220, 22);
             this.cursosCreadosToolStripMenuItem1.Text = "Cursos creados";
+            this.cursosCreadosToolStripMenuItem1.Click += new System.EventHandler(this.cursosCreadosToolStripMenuItem1_Click);
             // 
             // personasInscritasPorcursoToolStripMenuItem
             // 
@@ -366,7 +367,7 @@
             // verCursosToolStripMenuItem1
             // 
             this.verCursosToolStripMenuItem1.Name = "verCursosToolStripMenuItem1";
-            this.verCursosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.verCursosToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.verCursosToolStripMenuItem1.Text = "Ver cursos";
             this.verCursosToolStripMenuItem1.Click += new System.EventHandler(this.verCursosToolStripMenuItem1_Click);
             // 
@@ -382,9 +383,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 331);
+            this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip3);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.menuStrip2);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";

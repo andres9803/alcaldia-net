@@ -208,5 +208,12 @@ namespace alcaldia
             objCalificarCurso.MdiParent = this;
             objCalificarCurso.Show();
         }
+
+        private void cursosCreadosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InformeCursosCreadosSecretaria objInformeCursosCreadosSecretaria = new InformeCursosCreadosSecretaria();
+            objInformeCursosCreadosSecretaria.MdiParent = this;
+            objInformeCursosCreadosSecretaria.Show();
+        }
     }
 }

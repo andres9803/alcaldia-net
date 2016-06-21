@@ -26,6 +26,8 @@ namespace alcaldia
             cmbInstituto.DataSource = objCurso.llenarInstitutos().Tables[0];
             cmbInstituto.DisplayMember = "nombre";//Muestra este campo 
             cmbInstituto.ValueMember = "idInstituto";//Guarda este campo
+
+            txtDocumento.Text = Sesion.documentoSesion.ToString();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -44,6 +46,7 @@ namespace alcaldia
             objCurso.FechaFinalInscripciones = DateTime.Parse(txtFechaFinalInscripcion.Text);
             objCurso.IdInstituto = long.Parse(cmbInstituto.SelectedValue.ToString());
             objCurso.ValoracionCurso = int.Parse(txtValorCurso.Text);
+            objCurso.Documento = long.Parse(txtDocumento.Text);
             objCurso.registrarCurso();
             this.Close();
         }

@@ -52,10 +52,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cmbInstituto = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -267,13 +269,12 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
-            // groupBox2
+            // txtNombre
             // 
-            this.groupBox2.Location = new System.Drawing.Point(300, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(244, 291);
-            this.groupBox2.TabIndex = 24;
-            this.groupBox2.TabStop = false;
+            this.txtNombre.Location = new System.Drawing.Point(39, 38);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(198, 20);
+            this.txtNombre.TabIndex = 24;
             // 
             // label12
             // 
@@ -284,12 +285,22 @@
             this.label12.TabIndex = 23;
             this.label12.Text = "Nombre:";
             // 
-            // txtNombre
+            // groupBox2
             // 
-            this.txtNombre.Location = new System.Drawing.Point(39, 38);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(198, 20);
-            this.txtNombre.TabIndex = 24;
+            this.groupBox2.Controls.Add(this.txtDocumento);
+            this.groupBox2.Location = new System.Drawing.Point(300, 13);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(244, 291);
+            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabStop = false;
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.Location = new System.Drawing.Point(66, 260);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(100, 20);
+            this.txtDocumento.TabIndex = 25;
+            this.txtDocumento.Visible = false;
             // 
             // CrearCurso
             // 
@@ -314,6 +325,8 @@
             this.Load += new System.EventHandler(this.CrearCurso_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +361,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtDocumento;
     }
 }

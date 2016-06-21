@@ -185,5 +185,18 @@ namespace logica
             }
 
         }
+
+        public DataSet consultarCursosCreadosPoELRolSecretaria()
+        {
+            DataSet ds = new DataSet();
+            Conexion objConexion = new Conexion();
+            ds = objConexion.consultar("select curso.nombre, curso.descripcion, curso.horario, curso.fechaInicial, curso.fechaFinal, curso.totalHoras, curso.valor from curso where curso.documento = " + documento+"");
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("No exinten registros");
+            }
+
+            return ds;
+        }
     }
 }
