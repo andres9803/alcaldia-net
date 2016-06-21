@@ -26,6 +26,12 @@ namespace alcaldia
             cmbEstudiante.DataSource = objEstudiante.llenarRolEstudiantes().Tables[0];
             cmbEstudiante.DisplayMember = "idRolEstudiante";//Muestra este campo 
             cmbEstudiante.ValueMember = "idRolEstudiante";//Guarda este campo
+
+            Curso objCurso = new Curso();
+           
+            cmbCurso.DataSource = objCurso.llenarCurso().Tables[0];
+            cmbCurso.DisplayMember = "nombre";//Muestra este campo 
+            cmbCurso.ValueMember = "idCurso";//Guarda este campo
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -33,7 +39,8 @@ namespace alcaldia
             Asistencia objAsistencia = new Asistencia();
 
             objAsistencia.Fecha = DateTime.Parse(txtFecha.Text);
-            objAsistencia.IdRolEstudiante = long.Parse(cmbEstudiante.SelectedValue.ToString());           
+            objAsistencia.IdRolEstudiante = long.Parse(cmbEstudiante.SelectedValue.ToString());
+            objAsistencia.IdCurso = long.Parse(cmbCurso.SelectedValue.ToString());
             objAsistencia.registrarAsistencia();
             this.Close();
         }

@@ -68,7 +68,19 @@ namespace logica
             {
                 MessageBox.Show("Usuario de rol secretaria no registrado");
             }
+        }
 
+        public DataSet consultarSecretarias()
+        {
+            DataSet ds = new DataSet();
+            Conexion objConexion = new Conexion();
+            ds = objConexion.consultar("select * from usuario where idRol = 2");
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("No exinten registros");
+            }
+
+            return ds;
         }
     }
 }

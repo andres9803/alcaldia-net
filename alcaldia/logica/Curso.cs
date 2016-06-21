@@ -11,7 +11,7 @@ namespace logica
 {
     public class Curso
     {
-
+        private string nombre;
         private string descripcion;
         private string horario;
         private DateTime fechaInicial;
@@ -90,6 +90,12 @@ namespace logica
             set { valoracionCurso = value; }
         }
 
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+
         public DataSet llenarInstitutos()
         {
             try
@@ -106,18 +112,36 @@ namespace logica
 
                 throw;
             }
-
         }
+
+        public DataSet llenarCurso()
+        {
+            try
+            {
+                Conexion objConexion = new Conexion();
+                string consulta = "select * from curso";
+                DataSet data = new DataSet();
+                data = objConexion.consultar(consulta);
+
+                return data;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         public void registrarCurso()
         {
 
             Conexion objConexion = new Conexion();
-            string sentencia = "insert into curso (descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto) values('" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + ")";
+            string sentencia = "insert into curso (nombre,descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto) values('" + nombre + "','" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + ")";
 
             MessageBox.Show(sentencia);
 
-            if (objConexion.ejecutar("insert into curso (descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto) values('" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + ")"))
+            if (objConexion.ejecutar("insert into curso (nombre,descripcion,horario,fechaInicial,fechaFinal,valor,totalHoras,maximoAsistentes,fechaInicialInscripciones,fechaFinalInscripciones,idInstituto) values('" + nombre + "','" + descripcion + "','" + horario + "','" + fechaInicial + "','" + fechaFinal + "'," + valor + "," + totalHoras + "," + maximoAsistentes + ",'" + FechaFinalInscripciones + "','" + FechaFinalInscripciones + "'," + idInstituto + ")"))
             {
                 MessageBox.Show("Curso registrado correctamente");
             }
@@ -125,7 +149,19 @@ namespace logica
             {
                 MessageBox.Show("Curso no registrado");
             }
+        }
 
+        public DataSet consultarCursos()
+        {
+            DataSet ds = new DataSet();
+            Conexion objConexion = new Conexion();
+            ds = objConexion.consultar("select * from curso");
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("No exinten registros");
+            }
+
+            return ds;
         }
 
     }

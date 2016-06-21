@@ -33,12 +33,14 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.cmbEstudiante = new System.Windows.Forms.ComboBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbCurso = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 61);
+            this.label1.Location = new System.Drawing.Point(37, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
@@ -47,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 118);
+            this.label2.Location = new System.Drawing.Point(37, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 1;
@@ -66,23 +68,42 @@
             // cmbEstudiante
             // 
             this.cmbEstudiante.FormattingEnabled = true;
-            this.cmbEstudiante.Location = new System.Drawing.Point(40, 135);
+            this.cmbEstudiante.Location = new System.Drawing.Point(40, 83);
             this.cmbEstudiante.Name = "cmbEstudiante";
             this.cmbEstudiante.Size = new System.Drawing.Size(205, 21);
             this.cmbEstudiante.TabIndex = 3;
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(40, 78);
+            this.txtFecha.Location = new System.Drawing.Point(40, 31);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(205, 20);
             this.txtFecha.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Curso:";
+            // 
+            // cmbCurso
+            // 
+            this.cmbCurso.FormattingEnabled = true;
+            this.cmbCurso.Location = new System.Drawing.Point(40, 139);
+            this.cmbCurso.Name = "cmbCurso";
+            this.cmbCurso.Size = new System.Drawing.Size(205, 21);
+            this.cmbCurso.TabIndex = 6;
             // 
             // CrearAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.cmbCurso);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.cmbEstudiante);
             this.Controls.Add(this.btnRegistrar);
@@ -103,5 +124,7 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.ComboBox cmbEstudiante;
         private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbCurso;
     }
 }

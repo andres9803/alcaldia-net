@@ -12,5 +12,6 @@ namespace alcaldia
         public static long documentoSesion;
         public static string nombreSesion;
         public static string rolSesion;
+        public static string claveSesion;
     }
 }

@@ -69,7 +69,19 @@ namespace logica
 
                 throw;
             }
+        }
 
+        public DataSet consultarAlcaldias()
+        {
+            DataSet ds = new DataSet();
+            Conexion objConexion = new Conexion();
+            ds = objConexion.consultar("select * from alcaldia");
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("No exinten registros");
+            }
+
+            return ds;
         }
     }
 }

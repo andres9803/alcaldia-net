@@ -7,6 +7,7 @@ using persistencia;
 using System.Windows.Forms;
 using System.Data;
 
+
 namespace logica
 {
     public class Usuario
@@ -137,7 +138,25 @@ namespace logica
 
         }
 
-        
+        public void cambiarContrasena()
+        {
+
+            Conexion objConexion = new Conexion();
+            string sentencia = "UPDATE  usuario  SET  clave='" + clave + "' WHERE documento=" + documento + "";
+            
+
+            MessageBox.Show(sentencia);
+
+            if (objConexion.ejecutar("UPDATE  usuario  SET  clave='" + clave + "' WHERE documento=" + documento + ""))
+            {
+                MessageBox.Show("Contraseña modificada correctamente");
+            }
+            else
+            {
+                MessageBox.Show("la contraseña no se pudo modificar");
+            }
+
+        }
 
         public DataSet iniciarSesion()
         {

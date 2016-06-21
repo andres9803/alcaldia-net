@@ -36,6 +36,7 @@ namespace alcaldia
                 Sesion.documentoSesion = long.Parse(ds.Tables[0].Rows[0][0].ToString());
                 Sesion.nombreSesion = ds.Tables[0].Rows[0][1].ToString();
                 Sesion.rolSesion = ds.Tables[0].Rows[0][2].ToString();
+                Sesion.claveSesion = txtClave.Text;
                 Menu menu = new Menu();
                 menu.ShowDialog();
                 Form1 login = new Form1();

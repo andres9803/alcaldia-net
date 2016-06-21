@@ -1,6 +1,6 @@
 ﻿namespace alcaldia
 {
-    partial class VerSecretarias
+    partial class VerInstitutos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvInstitutos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvSecretarias = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSecretarias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInstitutos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvInstitutos
+            // 
+            this.dgvInstitutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInstitutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInstitutos.Location = new System.Drawing.Point(12, 57);
+            this.dgvInstitutos.Name = "dgvInstitutos";
+            this.dgvInstitutos.Size = new System.Drawing.Size(454, 249);
+            this.dgvInstitutos.TabIndex = 0;
+            this.dgvInstitutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Location = new System.Drawing.Point(13, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Lista de secretarias :";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Lista de institutos:";
             // 
-            // dgvSecretarias
-            // 
-            this.dgvSecretarias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSecretarias.Location = new System.Drawing.Point(12, 48);
-            this.dgvSecretarias.Name = "dgvSecretarias";
-            this.dgvSecretarias.Size = new System.Drawing.Size(486, 255);
-            this.dgvSecretarias.TabIndex = 1;
-            this.dgvSecretarias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSecretarias_CellContentClick);
-            // 
-            // VerSecretarias
+            // VerInstitutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 315);
-            this.Controls.Add(this.dgvSecretarias);
+            this.ClientSize = new System.Drawing.Size(478, 318);
             this.Controls.Add(this.label1);
-            this.Name = "VerSecretarias";
-            this.Text = "VerSecretarias";
+            this.Controls.Add(this.dgvInstitutos);
+            this.Name = "VerInstitutos";
+            this.Text = "VerInstitutos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.VerSecretarias_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSecretarias)).EndInit();
+            this.Load += new System.EventHandler(this.VerInstitutos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInstitutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,7 +71,7 @@
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgvInstitutos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvSecretarias;
     }
 }

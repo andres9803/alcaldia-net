@@ -29,7 +29,7 @@ namespace logica
             set { direccion = value; }
         }
 
-      
+
 
         public long IdAlcaldia
         {
@@ -86,6 +86,19 @@ namespace logica
                 MessageBox.Show("Instituto no registrado");
             }
 
+        }
+
+        public DataSet consultarInstitutos()
+        {
+            DataSet ds = new DataSet();
+            Conexion objConexion = new Conexion();
+            ds = objConexion.consultar("select * from instituto");
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("No exinten registros");
+            }
+
+            return ds;
         }
     }
 }

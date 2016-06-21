@@ -32,6 +32,7 @@ namespace alcaldia
         {
             Curso objCurso = new Curso();
 
+            objCurso.Nombre = txtNombre.Text;
             objCurso.Descripcion = txtDescripcion.Text;
             objCurso.Horario = txtHorario.Text;
             objCurso.FechaInicial = DateTime.Parse(txtFechaInicial.Text);

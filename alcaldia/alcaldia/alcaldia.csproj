@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsignarCurso.Designer.cs">
+      <DependentUpon>AsignarCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrearAlcaldia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCambiarContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCambiarContrasena.Designer.cs">
+      <DependentUpon>FormCambiarContrasena.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,12 +127,51 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesion.cs" />
+    <Compile Include="VerAlcaldias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerAlcaldias.Designer.cs">
+      <DependentUpon>VerAlcaldias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerAsistencias.Designer.cs">
+      <DependentUpon>VerAsistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerCursos.Designer.cs">
+      <DependentUpon>VerCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerCursosInscritos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerCursosInscritos.Designer.cs">
+      <DependentUpon>VerCursosInscritos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerInstitutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerInstitutos.Designer.cs">
+      <DependentUpon>VerInstitutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="VerSecretarias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VerSecretarias.Designer.cs">
       <DependentUpon>VerSecretarias.cs</DependentUpon>
     </Compile>
+    <Compile Include="VerUsuariosSecretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerUsuariosSecretaria.Designer.cs">
+      <DependentUpon>VerUsuariosSecretaria.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AsignarCurso.resx">
+      <DependentUpon>AsignarCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearAlcaldia.resx">
       <DependentUpon>CrearAlcaldia.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +202,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCambiarContrasena.resx">
+      <DependentUpon>FormCambiarContrasena.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,8 +217,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VerAlcaldias.resx">
+      <DependentUpon>VerAlcaldias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerAsistencias.resx">
+      <DependentUpon>VerAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerCursos.resx">
+      <DependentUpon>VerCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerCursosInscritos.resx">
+      <DependentUpon>VerCursosInscritos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerInstitutos.resx">
+      <DependentUpon>VerInstitutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VerSecretarias.resx">
       <DependentUpon>VerSecretarias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerUsuariosSecretaria.resx">
+      <DependentUpon>VerUsuariosSecretaria.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
